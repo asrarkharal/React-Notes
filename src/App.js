@@ -43,7 +43,7 @@ function App() {
     <Col md={12} sm = {12} lg= {12}>
       <Form.Group controlId="formBasicEmail">
       <Form.Label>Tile</Form.Label>
-      <Form.Control type="input" placeholder="My Story Title" />
+      <Form.Control type="input" placeholder="Notes Title" />
       <Form.Text className="text-muted">Please Enter Some Text before Saving it.</Form.Text>
       </Form.Group>
     </Col>

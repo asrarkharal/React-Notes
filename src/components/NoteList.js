@@ -8,10 +8,11 @@ export default function NoteList(props) {
 
     return (
         <>
-            <ListGroup as="ul">
-            {notesList.map((x)=><ListGroup.Item>{x.Title}</ListGroup.Item>)}
+            <ListGroup defaultActiveKey="#link1">
+            {notesList.map((x)=><ListGroup.Item action href="">{x.Title}</ListGroup.Item>)}
             </ListGroup>
         </>
     )
 
 }
+
