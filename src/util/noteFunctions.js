@@ -14,13 +14,15 @@ export function createNote(newNote){
     //Note input and add in notes Array. And return the whole array
     // in my app solution, i have created a seprate Component NoteList.js with
     // notesList. And in my NoteList.js there should be iterator that iterate 
-    //iterate notes array values with Bootstrap li tags, to show in proper formate.
+    //iterate notes array values with Bootstrap li or group list tags, to show in proper formate.
     
     //To Add Both Title and Note Text we need to have probably Array of object
-    // e.g., notes = [{Title:"Note Text"},{},{}]
+    // e.g., notes = [{Title:"Note Text"},{},{}] There needs to be id present each record..
 }
 
-export function readNote(){
+export function readNote(){}
 
-    //
-}
+export function updateNote(){}
+
+export function deleteNote(){}
+
