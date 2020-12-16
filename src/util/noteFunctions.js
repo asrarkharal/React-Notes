@@ -1,28 +1,50 @@
 
-export const notesList = [
-    {id: 1, Title: "Shopping", Body: "Some Text"},
-    {id: 2, Title: "Some Thing", Body: "Some Text"},
-    {id: 3, Title: "Running", Body: "Some Text"},
-    {id: 4, Title: "Study", Body: "Some Text"},
+const notesList = [
+    {id: 1, title: "Shopping", body: "Some Text"},
+    {id: 2, title: "Some Thing", body: "Some Text"},
     ];
 
 
-export function createNote(newNote){
-    
-    //One can use notes.push("newNote")
-    //it should receive value from Title input and 
-    //Note input and add in notes Array. And return the whole array
-    // in my app solution, i have created a seprate Component NoteList.js with
-    // notesList. And in my NoteList.js there should be iterator that iterate 
-    //iterate notes array values with Bootstrap li or group list tags, to show in proper formate.
-    
-    //To Add Both Title and Note Text we need to have probably Array of object
-    // e.g., notes = [{Title:"Note Text"},{},{}] There needs to be id present each record..
+export function createNote(title, body){
+    const note = {
+    id : notesList.length + 1,
+    title, 
+    body,
+    }
+
+    notesList.push(note)
+    return note;
+
 }
 
-export function readNote(){}
+export function readNote(id){
+return notesList.find((note) => note.id === id)
+}
 
-export function updateNote(){}
+export function readNotes(){
+    return notesList
+}
 
-export function deleteNote(){}
+
+
+export function updateNote(id, title, body){
+    const noteToUpdateIndex = notesList.findIndex((note) => note.id === id)
+
+    const note = {
+        id,
+        title, 
+        body,
+        }
+        notesList.splice(noteToUpdateIndex, 1, note)
+        return notesList
+
+}
+
+export function deleteNote(id){
+    const noteToUpdateIndex = notesList.findIndex((note) => note.id === id)
+    notesList.splice(noteToUpdateIndex, 1,)
+
+    return true
+
+}
 
