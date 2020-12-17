@@ -16,13 +16,12 @@ export default function NoteList({selectedNote, setSelectedNote, notes}) {
         <ListGroup as = "ul">
         
         {notes.map((note, index) => (
+
         <ListGroup.Item 
         active ={selectedNote ? note.id === selectedNote.id : false}
         onClick={() => onSelectNote(note)} as="li">
-         {note.title}
-        
-        </ListGroup.Item>
-            ))}
+        {note.title}
+        </ListGroup.Item>))}
         </ListGroup>
         
     )

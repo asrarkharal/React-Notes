@@ -9,7 +9,8 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Mylist from './components/NoteList';
 // import Editor from './components/Editor';
 import Form1 from './components/Form1';
-import { readNotes } from './util/noteFunctions';
+// import { readNotes } from './util/noteFunctions';
+import { readNotes } from './util/notesLS';
 
 
 // import * as Fnc from './util/noteFunctions'
@@ -25,11 +26,15 @@ function App() {
   
 
   const refreshList = () => {
+    setSelectedNote(undefined)
     const notes = readNotes()
     setNotes([...notes])
     //it will create new array and fill with new contents..
   }
 
+  const onClickNewNoteBtn = () => setSelectedNote(undefined)
+  
+  // Storage area
 
 
   return (
@@ -40,7 +45,8 @@ function App() {
    
   <Row>
   <Col  md = {4} sm ={12} xs = {12}>
-      <Button className = "mb-4" variant="dark" size = 'md' block>New Note</Button>
+      <Button onClick ={onClickNewNoteBtn}
+       className = "mb-4" variant="dark" size = 'md' block>New Note</Button>
       <Mylist notes = {notes} selectedNote = {selectedNote} setSelectedNote = {setSelectedNote} />
       </Col>
 

@@ -1,19 +1,19 @@
 
 const notesList = [
-    {id: 1, title: "Shopping", body: "Some Text"},
-    {id: 2, title: "Some Thing", body: "Some Text"},
+    {id: 1, title: "Shopping", body: "Text A"},
+    {id: 2, title: "Some Thing", body: "Text B"},
     ];
 
 
 export function createNote(title, body){
     const note = {
-    id : notesList.length + 1,
+    id : Date.now(),
     title, 
     body,
     }
 
     notesList.push(note)
-    return note;
+    return note
 
 }
 
@@ -41,9 +41,8 @@ export function updateNote(id, title, body){
 }
 
 export function deleteNote(id){
-    const noteToUpdateIndex = notesList.findIndex((note) => note.id === id)
-    notesList.splice(noteToUpdateIndex, 1,)
-
+    const indexToDelete = notesList.findIndex((note) => note.id === id)
+    if (indexToDelete >=0) notesList.splice(indexToDelete, 1,)
     return true
 
 }
