@@ -71,12 +71,7 @@ const onDelete = (e) => {
     
 }
 
-    const onRead = (e) => {
-    e.preventDefault()
-    console.log(readNotes())
-   }
-   
-
+    
     return(
         
         <Form>
@@ -99,8 +94,7 @@ const onDelete = (e) => {
 
             <Button className = "mr-2" variant = "primary" onClick = {onSave} >Save</Button>
            {selectedNote && <Button className = "mr-2" variant = "danger" onClick = {onDelete}>Delete</Button>}
-            <button onClick = {onRead}>click</button>
-
+            
             {status && <Alert className ="mt-2" variant = {variantt}>{status}</Alert>}
 
         </Form>
