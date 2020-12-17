@@ -23,8 +23,8 @@ function App() {
     const notes = readNotes()
     setNotes(notes)
   },[])
-  
 
+   
   const refreshList = () => {
     setSelectedNote(undefined)
     const notes = readNotes()

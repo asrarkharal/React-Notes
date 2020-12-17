@@ -25,55 +25,35 @@ export function createNote(title, body) {
 }
 
 
-
-const notesList = [
-    {id: 1, title: "Shopping", body: "Text A"},
-    {id: 2, title: "Some Thing", body: "Text B"},
-    ];
-
-
-// export function createNote(title, body){
-//     const note = {
-//     id : Date.now(),
-//     title, 
-//     body,
-//     }
-
-//     notesList.push(note)
-//     return note
-
+// export function readNote(id){
+//   const mylist = readNotes();
+// return mylist.find((note) => note.id === id)
 // }
-
-export function readNote(id){
-  const mylist = readNotes();
-return mylist.find((note) => note.id === id)
-}
-
-// export function readNotes(){
-//     return notesList
-// }
-
-
 
 export function updateNote(id, title, body){
-
   const notes = readNotes();
-
-    const noteToUpdateIndex = notes.findIndex((note) => note.id === id)
-
-    const note = {
+  const noteToUpdateIndex = notes.findIndex((note) => note.id === id)
+  const note = {
         id,
         title, 
         body,
         }
-        notes.splice(noteToUpdateIndex, 1, note)
-
-         const jsonNoteArray = JSON.stringify(notes);
-         localStorage.setItem("notes", jsonNoteArray);
-
-        return true
-
+  notes.splice(noteToUpdateIndex, 1, note)
+  const jsonNoteArray = JSON.stringify(notes);
+  localStorage.setItem("notes", jsonNoteArray);
+  moveNote(noteToUpdateIndex)
+  return true
 }
+
+export function moveNote(indexToMove) {
+  const notes = readNotes();
+  const noteToMove = notes.length > 0 ? notes[indexToMove] : null;
+  notes.splice(indexToMove, 1);
+  notes.splice(notes.length, 0, noteToMove);
+  const jsonNoteArray = JSON.stringify(notes);
+  localStorage.setItem("notes", jsonNoteArray);
+}
+
 
 export function deleteNote(id){
   const notes = readNotes();
