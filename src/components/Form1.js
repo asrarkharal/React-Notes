@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
 
 // import {createNote, readNotes, updateNote, deleteNote} from '../util/noteFunctions'
-import {createNote, readNotes, updateNote, deleteNote} from '../util/notesLS'
+import {createNote, updateNote, deleteNote} from '../util/notesLS'
 
 
 export default function Form1({selectedNote, refreshList}) {
